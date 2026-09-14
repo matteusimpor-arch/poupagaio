@@ -46,3 +46,36 @@ button,input{font:inherit} button,a{-webkit-tap-highlight-color:transparent} but
 .form-alert.success{color:#166534;background:#dcfce7}
 
 .brand-image img{width:100%;height:100%;object-fit:contain}
+
+.transactions-page{max-width:1280px;margin:0 auto;padding:28px 36px 70px}
+.simple-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:42px}
+.simple-header .brand small{color:var(--muted)}
+.simple-header>a{display:flex;align-items:center;gap:7px;color:var(--muted);font-size:13px}
+.transactions-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
+.transactions-title small{color:var(--green-dark);font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.9px}
+.transactions-title h1{margin:4px 0;font-size:34px;letter-spacing:-1.2px}
+.transactions-title p{margin:0;color:var(--muted);font-size:13px}
+.transactions-title>span{width:55px;height:55px;display:grid;place-items:center;border-radius:17px;color:var(--green-dark);background:var(--green-light)}
+.transactions-grid{display:grid;grid-template-columns:minmax(280px,.72fr) 1.35fr;gap:18px;align-items:start}
+.transaction-form form{margin-top:20px;display:grid;gap:13px}
+.transaction-form label{display:grid;gap:6px;font-size:11px;font-weight:800}
+.transaction-form input,.transaction-form select,.transaction-form textarea{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:11px;outline:0;color:var(--ink);background:#fff}
+.transaction-form input:focus,.transaction-form select:focus,.transaction-form textarea:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(34,197,94,.12)}
+.transaction-form textarea{min-height:78px;resize:vertical}
+.transaction-form details{padding:11px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.transaction-form summary{color:var(--green-dark);font-size:12px;font-weight:800;cursor:pointer}
+.transaction-form details label{margin-top:12px}
+.empty-note{color:var(--red);font-size:11px}
+.transaction-list{margin-top:14px}
+.transaction-list article{padding:13px 0;display:grid;grid-template-columns:8px minmax(130px,1fr) auto auto auto;gap:10px;align-items:center;border-bottom:1px solid #edf2ee}
+.transaction-list article:last-child{border:0}
+.transaction-list article>i{width:8px;height:8px;border-radius:50%}.income-dot{background:var(--green)}.expense-dot{background:var(--red)}
+.transaction-list article>div strong,.transaction-list article>div small{display:block}.transaction-list article>div strong{font-size:13px}.transaction-list article>div small{margin-top:3px;color:var(--muted);font-size:10px}
+.transaction-list article>span{font-size:12px;font-weight:900}.positive{color:#15803d}.negative{color:#b91c1c}
+.transaction-status{padding:5px 8px;border-radius:999px;color:#1d4ed8;background:#eff6ff;font-size:9px;font-style:normal;font-weight:900;white-space:nowrap}
+.transaction-status.paid{color:#166534;background:#dcfce7}.transaction-status.due_soon{color:#854d0e;background:#fef9c3}.transaction-status.due_today{color:#c2410c;background:#ffedd5}.transaction-status.late{color:#991b1b;background:#fee2e2}.transaction-status.cancelled{color:#475569;background:#f1f5f9}
+.transaction-list article form button{width:31px;height:31px;display:grid;place-items:center;border:0;border-radius:9px;color:#166534;background:#dcfce7}
+.empty-state{padding:50px 20px;display:grid;justify-items:center;text-align:center;color:var(--muted)}
+.empty-state svg{margin-bottom:12px;color:#8fb49b}.empty-state strong{color:var(--ink)}.empty-state p{margin:5px 0;font-size:12px}
+@media(max-width:850px){.transactions-grid{grid-template-columns:1fr}.transactions-page{padding:22px 16px 70px}.simple-header{margin-bottom:30px}}
+@media(max-width:570px){.simple-header .brand>span:last-child{display:none}.transactions-title>span{display:none}.transaction-list article{grid-template-columns:8px 1fr auto}.transaction-list article>span{grid-column:2}.transaction-status{grid-column:2;justify-self:start}.transaction-list article form{grid-column:3;grid-row:2/4}}
