@@ -4,6 +4,10 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Poupagaio | Controle financeiro",
   description: "Organize hoje. Voe mais longe.",
+  icons: {
+    icon: "/logo-poupagaio-icone.png",
+    apple: "/logo-poupagaio-icone.png",
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
