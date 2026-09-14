@@ -10,15 +10,15 @@ import { useState } from "react";
 import { BrandMark } from "./brand-mark";
 
 const navigation = [
-  ["Início", Home], ["Movimentações", WalletCards], ["Planejamento", ListChecks],
-  ["Investimentos", TrendingUp], ["Metas", Target]
+  ["Início", Home, "/"], ["Movimentações", WalletCards, "/movimentacoes"],
+  ["Planejamento", ListChecks, "#"], ["Investimentos", TrendingUp, "#"], ["Metas", Target, "#"]
 ] as const;
 
 const accounts = [
-  { name: "Financiamento", date: "18 set", value: "R$ 1.414,00", status: "soon", label: "Vence em 3 dias" },
-  { name: "Internet", date: "20 set", value: "R$ 119,90", status: "pending", label: "Pendente" },
-  { name: "Energia", date: "12 set", value: "R$ 186,40", status: "paid", label: "Pago" },
-  { name: "Cartão Itaú", date: "10 set", value: "R$ 742,30", status: "late", label: "Atrasado" },
+  { name: "Conta demonstrativa", date: "18 set", value: "R$ 1.000,00", status: "soon", label: "Vence em 3 dias" },
+  { name: "Internet", date: "20 set", value: "R$ 100,00", status: "pending", label: "Pendente" },
+  { name: "Energia", date: "12 set", value: "R$ 150,00", status: "paid", label: "Pago" },
+  { name: "Cartão de exemplo", date: "10 set", value: "R$ 500,00", status: "late", label: "Atrasado" },
 ];
 
 const quick = [
@@ -37,13 +37,13 @@ export function DashboardShell() {
         <button className="close-menu" onClick={() => setOpen(false)} aria-label="Fechar menu"><X /></button>
         <BrandMark />
         <button className="space-switch">
-          <span>ML</span><span><small>Espaço atual</small><strong>Mateus e Luana</strong></span>
+          <span>ML</span><span><small>Espaço atual</small><strong>Espaço demonstrativo</strong></span>
         </button>
         <nav aria-label="Menu principal">
-          {navigation.map(([label, Icon]) => (
-            <button key={label} className={active === label ? "active" : ""} onClick={() => { setActive(label); setOpen(false); }}>
+          {navigation.map(([label, Icon, href]) => (
+            <Link key={label} href={href} className={active === label ? "active" : ""} onClick={() => { setActive(label); setOpen(false); }}>
               <Icon size={20}/>{label}
-            </button>
+            </Link>
           ))}
         </nav>
         <Link className="account-link" href="/login"><Settings size={20}/> Conta e acesso</Link>
@@ -53,8 +53,8 @@ export function DashboardShell() {
       <main className="dashboard">
         <header className="topbar">
           <button className="menu-trigger" onClick={() => setOpen(true)} aria-label="Abrir menu"><Menu /></button>
-          <div><small>Olá, Mateus</small><h1>{active}</h1></div>
-          <div className="top-actions"><button aria-label="Notificações"><Bell size={19}/></button><span>MA</span></div>
+          <div><small>Olá!</small><h1>{active}</h1></div>
+          <div className="top-actions"><button aria-label="Notificações"><Bell size={19}/></button><span>PG</span></div>
         </header>
 
         <div className="month-select">
@@ -64,13 +64,13 @@ export function DashboardShell() {
         </div>
 
         <section className="balance">
-          <div><small>Saldo disponível</small><strong>R$ 3.486,70</strong><span><TrendingUp size={15}/> 8,4% acima do mês passado</span></div>
+          <div><small>Saldo disponível</small><strong>R$ 3.250,00</strong><span><TrendingUp size={15}/> 8,4% acima do mês passado</span></div>
           <PiggyBank className="balance-icon"/>
         </section>
 
         <section className="summary">
-          <article><i className="income"><ArrowDownLeft/></i><span><small>Entradas</small><strong>R$ 6.200,00</strong></span></article>
-          <article><i className="expense"><ArrowUpRight/></i><span><small>Gastos</small><strong>R$ 2.713,30</strong></span></article>
+          <article><i className="income"><ArrowDownLeft/></i><span><small>Entradas</small><strong>R$ 6.000,00</strong></span></article>
+          <article><i className="expense"><ArrowUpRight/></i><span><small>Gastos</small><strong>R$ 2.750,00</strong></span></article>
           <article><i className="investment"><Landmark/></i><span><small>Investido</small><strong>R$ 500,00</strong></span></article>
           <article><i className="saved"><PiggyBank/></i><span><small>Guardado</small><strong>R$ 800,00</strong></span></article>
         </section>
