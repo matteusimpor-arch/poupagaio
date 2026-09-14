@@ -5,10 +5,10 @@ export function BrandMark({ compact = false }: { compact?: boolean }) {
     <div className="brand" aria-label="Poupagaio">
       <span className="brand-image">
         <Image
-          src="/logo-poupagaio.svg"
+          src="/logo-poupagaio-principal.png"
           alt=""
-          width={46}
-          height={46}
+          width={96}
+          height={96}
           priority
         />
       </span>
