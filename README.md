@@ -20,7 +20,7 @@ Aplicativo de controle financeiro pessoal, compartilhado e familiar.
 1. Instale as dependências: npm install
 2. Copie .env.example para .env.local
 3. Preencha a URL e a chave publicável do Supabase
-4. Execute supabase/schema.sql no SQL Editor do Supabase
+4. A migration em supabase/migrations é aplicada pela integração do Supabase
 5. Inicie com npm run dev
 
 ## Segurança
